@@ -9,6 +9,11 @@
   }
 
 let favoriteActivities: string[]
-favoriteActivities = ["Sports", 1]
+favoriteActivities = ["Sports"]
 
-console.log(person.name)
+for (const hobby of person.hobbies) {
+  console.log(hobby.toUpperCase())
+  // console.log(hobby.map()) !!! ERROR !!!! because typescript knows its map works only for arrays not on strings
+}
+
+// console.log(person.name)
