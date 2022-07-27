@@ -1,13 +1,14 @@
-function add(n1: number, n2: number) {
-  if (typeof n1 !== "number" || typeof n2 !== "number"){
-    throw new Error("Incorrect input!")
+// const person: {
+  //   name: string;
+  //   age: number;
+  // } = {
+  const person = {
+    name: "Maximilian",
+    age: 30,
+    hobbies: ["Sports", "Cooking"]
   }
-  return n1 + n2
-}
 
-const number1 = "5"
-const number2 = 2.8
+let favoriteActivities: string[]
+favoriteActivities = ["Sports", 1]
 
-
-const result = add(number1, number2)
-console.log(result)
+console.log(person.name)
