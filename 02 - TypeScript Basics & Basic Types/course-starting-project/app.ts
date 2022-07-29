@@ -19,4 +19,3 @@ function generateError(message: string, code: number): never {
 const result = generateError('An error occurred!', 500)
 
 console.log(result)
-
