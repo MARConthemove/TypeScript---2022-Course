@@ -2,6 +2,7 @@ function add(n1: number, n2: number) {
   return n1 + n2;
 }
 
+// using void for function types
 function printResult(num: number): void {
   console.log('Result: ' + num);
 }
