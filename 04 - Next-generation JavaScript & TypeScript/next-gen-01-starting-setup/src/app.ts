@@ -1,8 +1,8 @@
-const userName = "Max"
+// const userName = "Max"
 // userName = "Maximilian"
-let age = 30
+// let age = 30
 
-age = 29
+// age = 29
 
 // function add(a: number, b: number) {
 //   var result
@@ -24,17 +24,17 @@ age = 29
 //   button.addEventListener("click", event => console.log(event))
 // }
 
-// const hobbies = ["sports", "cooking"]
+const hobbies = ["sports", "cooking"]
 
 // spread opperator:
-// const activeHobbies = ["hiking", ...hobbies]
+const activeHobbies = ["hiking", ...hobbies]
 
 // activeHobbies.push(hobbies[0], hobbies[1])
 // better:
-// activeHobbies.push(...hobbies)
+activeHobbies.push(...hobbies)
 
 const person = {
-  name: "Max",
+  firstName: "Max",
   age: 30
 }
 
@@ -49,7 +49,17 @@ const add = (...numbers: number[]) => {
 const addedNumbers = add(5, 10 , 2, 3.7)
 console.log(addedNumbers)
 
-console.log(copiedPerson)
+// array or object destructuring:
+const [hobby1, hobby2, ...remainingHobbies] = hobbies
+// const hobby1 = hobbies[0]
+// const hobby2 = hobbies[1]
+console.log(hobbies, hobby1, hobby2)
+
+
+const { firstName: userName, age } = person
+console.log(userName, age)
+
+// console.log(copiedPerson)
 // console.log(activeHobbies)
 // console.log(add(2,5))
 
