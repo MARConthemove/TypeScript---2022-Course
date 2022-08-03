@@ -24,6 +24,24 @@ if (button) {
   button.addEventListener("click", event => console.log(event))
 }
 
+const hobbies = ["sports", "cooking"]
+
+// spread opperator:
+const activeHobbies = ["hiking", ...hobbies]
+
+// activeHobbies.push(hobbies[0], hobbies[1])
+// better:
+activeHobbies.push(...hobbies)
+
+const person = {
+  name: "Max",
+  age: 30
+}
+
+const copiedPerson = { ...person }
+
+console.log(copiedPerson)
+console.log(activeHobbies)
 console.log(add(2,5))
 
 printOutput(add(5))
