@@ -10,7 +10,9 @@ age = 29
 //   return result
 // }
 
-const add = (a: number, b: number) => a + b
+// default parameter for "b"
+// default arguments have to be at the last position otherwise it will not work!
+const add = (a: number, b: number = 1) => a + b
 
 const printOutput: (a: string | number) => void = output  => {
   console.log(output)
@@ -24,7 +26,7 @@ if (button) {
 
 console.log(add(2,5))
 
-printOutput(add(5,2))
+printOutput(add(5))
 
 // with let active blockscope!
 // if (age > 20) {
