@@ -1,17 +1,20 @@
 class Department {
   // public is default = accessable from outside
   // private only allows to change properties with methods from inside the class
-  public name: string = "DEFAULT"
+
+  // private id: string
+  // private name: string = "DEFAULT"
   private employees: string[] = []
 
   // function which is executed when an instance is getting created
-  constructor(n: string) {
-    this.name = n
+  constructor(private id: string, public name: string) {
+    // this.id = id
+    // this.name = n
   }
 
   // methods
   describe(this: Department) {
-    console.log('Department: ' + this.name)
+    console.log(`Department (${this.id}): ${this.name}`)
   }
   addEmployee(employee: string) {
     // validation etc
@@ -24,7 +27,7 @@ class Department {
 
 }
 
-const accounting = new Department("Accounting")
+const accounting = new Department("d1", "Accounting")
 
 accounting.addEmployee("Max")
 accounting.addEmployee("Manu")
@@ -40,5 +43,3 @@ accounting.describe()
 // const accountingCopy = { name: "DUMMY", describe: accounting.describe }
 
 // accountingCopy.describe()
-
-
