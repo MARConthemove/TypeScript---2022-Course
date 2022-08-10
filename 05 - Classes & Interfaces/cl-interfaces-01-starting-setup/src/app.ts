@@ -26,20 +26,48 @@ class Department {
     console.log("length: ", this.employees.length)
     console.log("employee array: ", this.employees)
   }
-
 }
 
-const accounting = new Department("d1", "Accounting")
+class ITDepartment extends Department {
+  admins: string[]
 
-accounting.addEmployee("Max")
-accounting.addEmployee("Manu")
+  constructor(id: string, admins: string[]) {
+    // whenever the inheriting class has its own constructor function we need to call super()
+    // super() has to stand on top
+    super(id, "IT")
+    this.admins = admins
+  }
+}
+
+class AccountingDepartment extends Department {
+  constructor(id: string, private reports: string[]) {
+    super(id, "Accounting")
+  }
+
+  addReport(text: string) {
+    this.reports.push(text)
+  }
+
+  printReports() {
+    console.log(this.reports)
+  }
+}
+
+const it = new ITDepartment("d1", ["Marc", "Manu"])
+const accounting = new AccountingDepartment("d2", [])
+
+accounting.addReport("Something went wrong ...")
+
+it.addEmployee("Max")
+it.addEmployee("Manu")
 
 // this shouldn't be allowed!
-// accounting.employees[2] = "Anna"
+// it.employees[2] = "Anna"
 
-accounting.printEmloyeeInformation()
+it.printEmloyeeInformation()
 
-accounting.describe()
+it.describe()
+console.log(it)
 
 
 // const accountingCopy = { name: "DUMMY", describe: accounting.describe }
