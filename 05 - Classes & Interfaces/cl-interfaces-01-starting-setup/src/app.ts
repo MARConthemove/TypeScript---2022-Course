@@ -4,7 +4,8 @@ class Department {
 
   // private readonly id: string
   // private name: string = "DEFAULT"
-  private employees: string[] = []
+  // protected is like private but also accessible with inheritance
+  protected employees: string[] = []
 
   // function which is executed when an instance is getting created
   // readonly allows only set property during initilization
@@ -42,6 +43,14 @@ class ITDepartment extends Department {
 class AccountingDepartment extends Department {
   constructor(id: string, private reports: string[]) {
     super(id, "Accounting")
+  }
+
+  addEmployee(name: string) {
+    if (name === "Max") {
+      return
+    }
+    // not accessible here because of private keyword in the parent class
+    this.employees.push(name)
   }
 
   addReport(text: string) {
