@@ -1,4 +1,4 @@
-class Department {
+abstract class Department {
   static fiscalYear = 2020
   // public is default = accessable from outside
   // private only allows to change properties with methods from inside the class
@@ -10,7 +10,7 @@ class Department {
 
   // function which is executed when an instance is getting created
   // readonly allows only set property during initilization
-  constructor(private readonly id: string, public name: string) {
+  constructor(protected readonly id: string, public name: string) {
     // this.id = id
     // this.name = n
     // console.log(Department.fiscalYear)
@@ -21,14 +21,16 @@ class Department {
   }
 
   // methods
-  describe(this: Department) {
-    console.log(`Department (${this.id}): ${this.name}`)
-  }
+  abstract describe(this: Department): void
+    // console.log(`Department (${this.id}): ${this.name}`)
+
+
   addEmployee(employee: string) {
     // validation etc
     // this.id = "d2" not allowed because of readonly property
     this.employees.push(employee)
   }
+
   printEmloyeeInformation() {
     console.log("length: ", this.employees.length)
     console.log("employee array: ", this.employees)
@@ -43,6 +45,10 @@ class ITDepartment extends Department {
     // super() has to stand on top
     super(id, "IT")
     this.admins = admins
+  }
+
+  describe() {
+    console.log("IT DEPARTMENT - ID: " + this.id)
   }
 }
 
