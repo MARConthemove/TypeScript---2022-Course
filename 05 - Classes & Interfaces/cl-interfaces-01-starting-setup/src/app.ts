@@ -2,12 +2,13 @@ class Department {
   // public is default = accessable from outside
   // private only allows to change properties with methods from inside the class
 
-  // private id: string
+  // private readonly id: string
   // private name: string = "DEFAULT"
   private employees: string[] = []
 
   // function which is executed when an instance is getting created
-  constructor(private id: string, public name: string) {
+  // readonly allows only set property during initilization
+  constructor(private readonly id: string, public name: string) {
     // this.id = id
     // this.name = n
   }
@@ -18,6 +19,7 @@ class Department {
   }
   addEmployee(employee: string) {
     // validation etc
+    // this.id = "d2" not allowed because of readonly property
     this.employees.push(employee)
   }
   printEmloyeeInformation() {
