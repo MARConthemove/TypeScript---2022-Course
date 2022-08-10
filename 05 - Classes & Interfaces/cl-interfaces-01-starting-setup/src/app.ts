@@ -1,4 +1,5 @@
 class Department {
+  static fiscalYear = 2020
   // public is default = accessable from outside
   // private only allows to change properties with methods from inside the class
 
@@ -12,6 +13,11 @@ class Department {
   constructor(private readonly id: string, public name: string) {
     // this.id = id
     // this.name = n
+    // console.log(Department.fiscalYear)
+  }
+
+  static createEmployee(name: string) {
+    return {name: name}
   }
 
   // methods
@@ -80,7 +86,11 @@ class AccountingDepartment extends Department {
   }
 }
 
+const employee1 = Department.createEmployee("Max")
+console.log(employee1, Department.fiscalYear)
+
 const it = new ITDepartment("d1", ["Marc", "Manu"])
+
 const accounting = new AccountingDepartment("d2", [])
 
 
